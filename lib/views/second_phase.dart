@@ -25,73 +25,76 @@ class SecondPhase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/sPhase/fondo.png")
-              )
-            )
+                image: AssetImage("assets/images/sPhase/fondo.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Center(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 275
+                SizedBox(
+                  height: size.height * 0.35,
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     sendCommand("sorpresa");
                   },
                   child: Image.asset(
                     "assets/images/sPhase/botonSorpresa.png",
-                    height:200,
-                    width: 300
+                    height: size.height * 0.25,
+                    width: size.width * 0.75,
                   ),
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     sendCommand("despedida");
                   },
                   child: Image.asset(
                     "assets/images/sPhase/botonDespedida.png",
-                    height:200,
-                    width: 300
+                    height: size.height * 0.25,
+                    width: size.width * 0.75,
                   ),
-                )
+                ),
               ],
             ),
           ),
           Positioned(
-            bottom: 15,
-            right: 25,
+            bottom: size.height * 0.02,
+            right: size.width * 0.05,
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const StartPage()));
               },
-              child:const SizedBox(
-                height:100,
-                width: 100,
-              )
+              child: SizedBox(
+                height: size.height * 0.12,
+                width: size.width * 0.25,
+              ),
             ),
           ),
           Positioned(
-            bottom: 15,
-            left: 25,
+            bottom: size.height * 0.02,
+            left: size.width * 0.05,
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const FirstPhase()));
               },
-              child:const SizedBox(
-                width: 100,
-                height:100
-              )
+              child: SizedBox(
+                width: size.width * 0.25,
+                height: size.height * 0.12,
+              ),
             ),
           ),
-        ]
-      )
+        ],
+      ),
     );
   }
 }

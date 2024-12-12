@@ -25,33 +25,146 @@ class FirstPhase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/fPhase/fondo.png"),
+                image: AssetImage("assets/images/fPhase/fondo_2.png"),
                 fit: BoxFit.cover
               )
+            ),
+          ),
+          Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: screen.height*0.2
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen
+                  ),
+                  onPressed: () {
+                    sendCommand("Dcerca");
+                  },
+                  child: const Text(
+                    "Demasiado Cerca",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height : screen.height*0.015
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen
+                  ),
+                  onPressed: () {
+                    sendCommand("Mcerca");
+                  },
+                  child: const Text(
+                    "Muy Cerca",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height : screen.height*0.015
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen
+                  ),
+                  onPressed: () {
+                    sendCommand("cerca");
+                  },
+                  child: const Text(
+                    "Cerca",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height : screen.height*0.015
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple[700]
+                  ),
+                  onPressed: () {
+                    sendCommand("lejos");
+                  },
+                  child: const Text(
+                    "Lejos",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height : screen.height*0.015
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple[700]
+                  ),
+                  onPressed: () {
+                    sendCommand("Mlejos");
+                  },
+                  child: const Text(
+                    "Muy Lejos",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height : screen.height*0.015
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple[700]
+                  ),
+                  onPressed: () {
+                    sendCommand("Dlejos");
+                  },
+                  child: const Text(
+                    "Demasiado Lejos",
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+              ],
             )
           ),
           Center(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 520,
+                SizedBox(
+                  height:screen.height*0.6,
                 ),
                 Row(
                   children: [
+                    SizedBox(
+                      width:screen.width*0.14,
+                    ),  
                     InkWell(
                       onTap: (){
                         sendCommand("huevo");
                       },
                       child: Image.asset(
                         "assets/images/fPhase/botonHuevo.png",
-                        height: 100,
-                        width: 200,
+                        height: screen.height*0.18,
+                        width: screen.width*0.35,
                         )
                     ),
                     InkWell(
@@ -60,23 +173,23 @@ class FirstPhase extends StatelessWidget {
                       },
                       child: Image.asset(
                         "assets/images/fPhase/botonNido.png",
-                        height: 100,
-                        width: 200,
+                        height: screen.height*0.18,
+                        width: screen.width*0.35,
                         ),
                     )
                   ],
                 ),
-                const SizedBox(
-                  height:25
-                ),
+                /*SizedBox(
+                  height: screen.height*0.1
+                ),*/
                 InkWell(
                   onTap: () {
                     sendCommand("cueva");
                   },
                   child: Image.asset(
                     "assets/images/fPhase/botonCueva.png",
-                    height: 100,
-                    width: 200,
+                      height: screen.height*0.18,
+                      width: screen.width*0.35,
                     ),
                 ),
               ]
@@ -115,4 +228,5 @@ class FirstPhase extends StatelessWidget {
     );
   }
 }
+
 

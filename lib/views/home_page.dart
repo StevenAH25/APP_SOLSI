@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children:[
@@ -38,8 +39,8 @@ class HomePage extends StatelessWidget {
           Center(
             child: Row(
               children:[
-                const SizedBox(
-                  width: 22,
+                SizedBox(
+                  width: screen.width*0.12,
                 ),
                 InkWell(
                   onTap:(){
@@ -48,8 +49,8 @@ class HomePage extends StatelessWidget {
                   },
                   child: Image.asset(
                     "assets/images/homePage/boton1.png",
-                    width: 120,
-                    height: 70,
+                    width: screen.width*0.25,
+                    height: screen.height*0.1,
                   ),
                 ),
                 InkWell(
@@ -59,8 +60,8 @@ class HomePage extends StatelessWidget {
                   },
                   child: Image.asset(
                     "assets/images/homePage/boton2.png",
-                    width: 120,
-                    height: 70,
+                    width: screen.width*0.25,
+                    height: screen.height*0.1,
                   ),
                 ),
                 InkWell(
@@ -70,8 +71,8 @@ class HomePage extends StatelessWidget {
                   },
                   child: Image.asset(
                     "assets/images/homePage/boton3.png",
-                    width: 120,
-                    height: 70,
+                    width: screen.width*0.25,
+                    height: screen.height*0.1,
                   ),
                 ),
               ]

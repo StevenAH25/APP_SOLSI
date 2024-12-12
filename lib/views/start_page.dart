@@ -14,7 +14,7 @@ class StartPage extends StatelessWidget {
       );
       if (response.statusCode == 200) {
         print('Command sent successfully: $command');
-      } else {
+      } else {      
         print('Failed to send command');
       }
     } catch (e) {
@@ -24,6 +24,8 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -36,35 +38,35 @@ class StartPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 20,
-            right: 20,
+            top: screen.height * 0.02,
+            right: screen.width * 0.05,
             child: Image.asset(
               "assets/images/inicio/interrogacion.png",
-              width: 50,
-              height: 50,
+              width: screen.width * 0.1,
+              height: screen.height * 0.05,
             )
           ),
           SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: screen.height * 0.1,
                 ),
                 Image.asset(
                   "assets/images/inicio/letrasSolsi.png",
-                  width: 230,
-                  height: 155,
+                  width: screen.width * 0.6,
+                  height: screen.height * 0.2,
                 ),
-                const SizedBox(
-                  height: 70,
+                SizedBox(
+                  height: screen.height * 0.05,
                 ),
                 Image.asset(
                   "assets/images/inicio/solsi.png",
-                  height: 230,
-                  width: 230,
+                  height: screen.height * 0.3,
+                  width: screen.width * 0.6,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: screen.height * 0.025,
                 ),
                 ElevatedButton(
                   onPressed: (){
@@ -74,17 +76,17 @@ class StartPage extends StatelessWidget {
                   child: Text(
                     "Iniciar",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: screen.width * 0.06,
                       fontWeight: FontWeight.bold,
                       color: Colors.brown[300]
                     ),
                   ),
                 ),
-                const SizedBox(height: 92,),
+                SizedBox(height: screen.height * 0.085,),
                 Image.asset(
                   "assets/images/inicio/piePagina.png",
-                  height: 200,
-                  width: 500,
+                  height: screen.height * 0.25,
+                  width: screen.width,
                 ),
               ],
             ),
